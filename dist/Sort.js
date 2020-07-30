@@ -8,9 +8,9 @@ exports.ShellSort = exports.InsertionSort = exports.SelectionSort = exports.bubb
  * @param n number
  */
 function swap(arr, m, n) {
-    var temp = arr[m];
-    arr[m] = arr[n];
-    arr[n] = temp;
+  var temp = arr[m];
+  arr[m] = arr[n];
+  arr[n] = temp;
 }
 /**
  * 冒泡排序
@@ -18,15 +18,15 @@ function swap(arr, m, n) {
  * @param arr Array<any>
  */
 function bubblesSort(arr) {
-    var length = arr.length;
-    for (var i = length - 1; i >= 0; i--) {
-        for (var j = 0; j < i; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(arr, j, j + 1);
-            }
-        }
+  var length = arr.length;
+  for (var i = length - 1; i >= 0; i--) {
+    for (var j = 0; j < i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+      }
     }
-    return arr;
+  }
+  return arr;
 }
 exports.bubblesSort = bubblesSort;
 /**
@@ -35,17 +35,17 @@ exports.bubblesSort = bubblesSort;
  * @param arr Array<any>
  */
 function SelectionSort(arr) {
-    var length = arr.length;
-    for (var j = 0; j < length - 1; j++) {
-        var min = j;
-        for (var i = min + 1; i < length; i++) {
-            if (arr[min] > arr[i]) {
-                min = i;
-            }
-            swap(arr, min, j);
-        }
+  var length = arr.length;
+  for (var j = 0; j < length - 1; j++) {
+    var min = j;
+    for (var i = min + 1; i < length; i++) {
+      if (arr[min] > arr[i]) {
+        min = i;
+      }
+      swap(arr, min, j);
     }
-    return arr;
+  }
+  return arr;
 }
 exports.SelectionSort = SelectionSort;
 /**
@@ -54,17 +54,17 @@ exports.SelectionSort = SelectionSort;
  * @param arr Array<any>
  */
 function InsertionSort(arr) {
-    var length = arr.length;
-    for (var i = 1; i < length; i++) {
-        var temp = arr[i];
-        var j = i - 1;
-        while (arr[j] > temp && j > 0) {
-            arr[j] = arr[j - 1];
-            j--;
-        }
-        arr[j] = temp;
+  var length = arr.length;
+  for (var i = 1; i < length; i++) {
+    var temp = arr[i];
+    var j = i - 1;
+    while (arr[j] > temp && j > 0) {
+      arr[j] = arr[j - 1];
+      j--;
     }
-    return arr;
+    arr[j] = temp;
+  }
+  return arr;
 }
 exports.InsertionSort = InsertionSort;
 /**
@@ -73,20 +73,20 @@ exports.InsertionSort = InsertionSort;
  * @param arr Array<any>
  */
 function ShellSort(arr) {
-    var length = arr.length;
-    var gap = Math.floor(length / 2);
-    while (gap >= 1) {
-        for (var i = gap; i < length; i++) {
-            var tamp = arr[i];
-            var j = i;
-            while (arr[j - gap] > tamp && j > gap - 1) {
-                arr[j] = arr[j - gap];
-                j -= gap;
-            }
-            arr[j] = tamp;
-        }
-        gap = Math.floor(gap / 2);
+  var length = arr.length;
+  var gap = Math.floor(length / 2);
+  while (gap >= 1) {
+    for (var i = gap; i < length; i++) {
+      var tamp = arr[i];
+      var j = i;
+      while (arr[j - gap] > tamp && j > gap - 1) {
+        arr[j] = arr[j - gap];
+        j -= gap;
+      }
+      arr[j] = tamp;
     }
-    return arr;
+    gap = Math.floor(gap / 2);
+  }
+  return arr;
 }
 exports.ShellSort = ShellSort;

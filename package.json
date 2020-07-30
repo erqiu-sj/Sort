@@ -1,0 +1,19 @@
+{
+  "name": "qsjsort",
+  "version": "1.0.1",
+  "description": "常用的排序，用于学习也可使用",
+  "main": "./dist/Sort.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erqiu-sj/Sort.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Shijie Qiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erqiu-sj/Sort/issues"
+  },
+  "homepage": "https://github.com/erqiu-sj/Sort#readme"
+}
