@@ -36,11 +36,40 @@ ArrayList.prototype.SelectionSort = function () {
     }
   }
 };
+// 插入排序
+ArrayList.prototype.InsertionSort = function () {
+  let length = this.array.length;
+  for (let i = 1; i < length; i++) {
+    let temp = this.array[i];
+    let j = i - 1;
+    while (this.array[j] > temp && j > 0) {
+      this.array[j] = this.array[j - 1];
+      j--;
+    }
+    this.array[j] = temp;
+  }
+};
+// 希尔排序
+ArrayList.prototype.ShellSort = function () {
+  let length = this.array.length;
+  let gap = Math.floor(length / 2);
+  while (gap >= 1) {
+    for (let i = gap; i < length; i++) {
+      let tamp = this.array[i];
+      let j = i;
+      while (this.array[j - gap] > tamp && j > gap - 1) {
+        this.array[j] = this.array[j - gap];
+        j -= gap;
+      }
+      this.array[j] = tamp;
+    }
+    gap = Math.floor(gap / 2);
+  }
+};
 const M = new ArrayList();
 M.insert(12);
 M.insert(234);
 M.insert(12);
 M.insert(12312);
-M.insert(2341);
-M.SelectionSort();
+M.ShellSort();
 console.log(M.array);
